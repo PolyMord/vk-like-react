@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Main = () => {
-  return <div>Main</div>
+const Subscribes = () => {
+  return <div>Subscribes</div>
 }
 
-export default Main
+export default Subscribes

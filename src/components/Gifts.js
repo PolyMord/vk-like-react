@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Main = () => {
-  return <div>Main</div>
+const Gifts = () => {
+  return <div>Gifts</div>
 }
 
-export default Main
+export default Gifts

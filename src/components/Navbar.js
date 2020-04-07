@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react"
 
-const Main = () => {
-  return <div>Main</div>
+const Navbar = () => {
+  return <div>Navbar</div>
 }
 
-export default Main
+export default Navbar
