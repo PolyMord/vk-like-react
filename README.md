@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 >>>>>>> 7c982e51832c85f2c53eace1b53fcead39c9bd31
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -71,8 +68,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 <<<<<<< HEAD
-=======
-=======
-# vk-like-react
->>>>>>> 18c41c63b42bc47b95cf086736d311f046cb9474
->>>>>>> 7c982e51832c85f2c53eace1b53fcead39c9bd31
