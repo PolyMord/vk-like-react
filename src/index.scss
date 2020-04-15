@@ -1,0 +1,897 @@
+// ================= <COLORS> ====================
+
+$background: #292929;
+$surface: #121212;
+$error: #cf6679;
+$primary: #bb86fc;
+$primary-variant: #913bfa;
+$secondary: #03dac6;
+$on-prim-sec: #000;
+$on-back-surf-err: #fff;
+
+// ================= </ COLORS> ====================
+
+// ================= <COMMON> ====================
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.154;
+  background-color: $background;
+}
+
+.app {
+  width: 100vw;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.primary {
+  color: $primary;
+}
+.primary-variant {
+  color: $primary-variant;
+}
+.secondary {
+  color: $secondary;
+}
+.on-prim-sec {
+  color: $on-prim-sec
+}
+.on-back-surf-err {
+  color: $on-back-surf-err
+}
+.border {
+  border: thin solid black;
+  border-radius: 5px;
+}
+--dark-theme {
+  body {background-color: $background;}
+}
+// ================= </ COMMON> ====================
+
+// ================= <HEADER> =====================
+
+.navbar {
+  width: 100%;
+  height: 40px;
+  background-color: $surface;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  border-bottom: thin solid $background;
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+  }
+  &__logo {
+    width: 165px;
+    display: block;
+  }
+  &__logo-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  &__logo-icon {
+    padding-right: 5px;
+    height: 24px;
+    width: 24px;
+    color: $secondary;
+  }
+  &__logo-span {
+    font-size: 14px;
+    font-weight: 500;
+    color: $secondary;
+  }
+  &__input-form {
+    width: 230px;
+    display: flex;
+    align-items: center;
+  }
+  &__input-label {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    background-color: $background;
+
+    &.focused {
+      background-color: $secondary;
+
+      .navbar__input-btn {color: $background}
+    }
+  }
+  &__input-btn {
+    border: none;
+    height: 100%;
+    background-color: inherit;
+    color: $secondary;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    outline: none;
+  }
+  &__input-text {
+    width: 80%;
+    height: 20px;
+    line-height: 16px;
+    background-color: $background;
+    border: none;
+
+    &.plholder::placeholder {
+      color: $secondary;
+    }
+
+    &::placeholder {
+      color: $secondary;
+    }
+    &:focus {
+      background-color: $secondary;
+      outline: none;
+    }
+  }
+  &__bell {
+    margin-left: 14px;
+    width: 45px;
+    display: block;
+
+    &:hover {
+      background-color: $background;
+      border-bottom: thin solid $surface;
+    }
+  }
+  &__bell-link {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $secondary;
+  }
+  &__player {
+    width: 310px;
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $background;
+      border-bottom: thin solid $surface;
+    }
+  }
+  &__player-btn {
+    border: none;
+    width: 25px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: inherit;
+    color: $secondary;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+  &__player-text {
+    padding-left: 10px;
+    font-size: 12.5px;
+    color: $secondary;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    user-select: none;
+  }
+  &__nav-btn {
+    width: 130px;
+    display: block;
+    margin-left: 66px;
+
+    &:hover {
+      background-color: $background;
+      border-bottom: thin solid $surface;
+    }
+  }
+  &__nav-btn-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+  }
+  &__nav-btn-name {
+    padding-left: 5px;
+    color: $secondary;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  &__nav-btn-right {
+    display: flex;
+  }
+  &__nav-btn-img {
+    height: 28px;
+    border-radius: 50%;
+  }
+  &__nav-btn-icon {
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $secondary;
+    font-size: 14px;
+  }
+}
+
+// ================= </ HEADER> ====================
+
+// ==================== <MAIN> ======================
+
+.main {
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+// =================== <LEFT-MENU> =====================
+
+.left-menu {
+  width: 150px;
+  height: 460px;
+
+  .nav {
+    &__settings {
+      margin-left: -26px;
+      margin-top: 4px;
+      padding-right: 6px;
+    }
+    &__item {
+      display: flex;
+      cursor: pointer;
+    }
+    &__link {
+      width: 150px;
+      height: 28px;
+      font-size: 14px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: $secondary;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $surface;
+      }
+    }
+    &__icon {
+      font-size: 20px;
+      height: 20px;
+      width: 20px;
+    }
+    &__icon-setting {
+      color: $secondary;
+      opacity: 0;
+      cursor: pointer;
+      transition: opacity 500ms;
+    }
+    &__icon-menu {
+      padding-right: 5px;
+    }
+    &__hr {
+      margin-top: 9px;
+      margin-left: 27px;
+      margin-right: 6px;
+      padding-top: 9px;
+      border-top: 1px solid $secondary;
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__link {
+      padding-right: 10px;
+      margin-bottom: 5px;
+      text-decoration: none;
+      font-size: 12.5px;
+      white-space: nowrap;
+      color: grey;
+    }
+    &__nav-link {
+      display: flex;
+      align-items: center;
+      font-size: 12.5px;
+      text-decoration: none;
+      color: grey;
+    }
+    &__icon {
+      color: inherit;
+      font-size: inherit;
+    }
+  }
+}
+
+.nav ul {
+  padding: 0;
+}
+
+// =================== </ LEFT-MENU> =====================
+
+// ====================== <NARROW> ========================
+
+.narrow-content {
+  padding-top: 15px;
+}
+.owner {
+  margin-bottom: 15px;
+  width: 230px;
+  height: 270px;
+  background-color: $surface;
+  border-radius: 5px;
+
+  &__wrapper {
+    padding: 15px;
+  }
+  &__avatar {
+    border-radius: 6px;
+    height: 200px;
+    background-color: black;
+  }
+  &__image {
+    border-radius: 5px;
+    max-width: 200px;
+    opacity: .9;
+  }
+  &__actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__edit {
+    width: 155px;
+    height: 30px;
+    display: block;
+  }
+  &__edit-text {
+    border-radius: 5px;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: $secondary;
+    color: $on-prim-sec;
+    transition: background-color 300ms, color 300ms;
+
+    &:hover {
+      background-color: $primary;
+    }
+  }
+  &__dots {
+    width: 35px;
+    display: block;
+  }
+  &__dots-link {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: $secondary;
+    color: $on-prim-sec;
+    transition: background-color 300ms, color 300ms;
+
+    &:hover {
+      background-color: $primary;
+    }
+  }
+  &__dot {
+    font-size: 30px;
+  }
+}
+.gifts {
+  margin-bottom: 15px;
+  width: 230px;
+  height: 130px;
+  background-color: $surface;
+  border-radius: 5px;
+
+  &__header {
+    height: 30px;
+    display: flex;
+    align-items: flex-end;
+  }
+  &__head-link {
+    padding-left: 15px;
+    color: $secondary;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  &__head-item {
+    padding-left: 5px;
+    font-size: 12.5px;
+    color: grey;
+  }
+  &__list {
+    padding: 15px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    text-decoration: none;
+  }
+  &__image {
+    height: 64px;
+  }
+}
+.friends {
+  margin-bottom: 15px;
+  width: 230px;
+  height: 355px;
+  background-color: $surface;
+  border-radius: 5px;
+
+  &__header {
+    height: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  &__left-link {
+    padding-left: 15px;
+    color: $secondary;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  &__right-link {
+    padding-right: 15px;
+    font-size: 14px;
+    text-decoration: none;
+    color: grey;
+  }
+  &__list {
+    padding: 15px;
+    margin: 0;
+  }
+  &__row {
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    text-decoration: none;
+  }
+  &__image {
+    height: 50px;
+    border-radius: 50%;
+  }
+  &__name {
+    font-size: 14px;
+    color: $secondary;
+    text-align: center;
+  }
+  &__hr {
+    width: 100%;
+    margin: 15px 0 0 0;
+    border: thin $background solid;
+  }
+  &__online-head {
+    display: flex;
+    height: 30px;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  &__online-link {
+    color: $secondary;
+    font-size: 14px;
+    text-decoration: none;
+
+    span {
+      padding-left: 5px;
+      color: grey;
+      font-size: 12.5px;
+    }
+  }
+  &__online-body {
+    padding-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  &__online-item {
+    margin-right: 25px;
+  }
+}
+.subscribes {
+  margin-bottom: 15px;
+  width: 230px;
+  height: 275px;
+  background-color: $surface;
+  border-radius: 5px;
+
+  &__header {
+    height: 30px;
+    display: flex;
+    align-items: flex-end;
+  }
+  &__head-link {
+    padding-left: 15px;
+    color: $secondary;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  &__list {
+    padding: 15px;
+    margin: 0;
+  }
+  &__item {
+    padding: 10px 0;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  &__image {
+    border-radius: 5px;
+    margin-right: 15px;
+    height: 40px;
+  }
+  &__name {
+    margin: 0 0 10px 0;
+    color: $secondary;
+    font-size: 13px;
+  }
+  &__desc {
+    margin: 0;
+    color: grey;
+    font-size: 12px;
+  }
+}
+.audios {
+  margin-bottom: 15px;
+  width: 230px;
+  height: 240px;
+  background-color: $surface;
+  border-radius: 5px;
+
+  &__header {
+    height: 30px;
+    display: flex;
+    align-items: flex-end;
+  }
+  &__head-link {
+    padding-left: 15px;
+    color: $secondary;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  &__list {
+    padding: 15px;
+    margin: 0;
+  }
+  &__item {
+    padding: 10px 0;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  &__image {
+    border-radius: 5px;
+    margin-right: 15px;
+    height: 40px;
+  }
+  &__name {
+    margin: 0 0 10px 0;
+    color: $secondary;
+    font-size: 13px;
+  }
+  &__artist {
+    margin: 0;
+    color: grey;
+    font-size: 12px;
+  }
+}
+
+// =================== </ NARROW> =====================
+
+// ====================== <WIDE> ======================
+.wide-content {
+  padding-top: 15px;
+}
+.info {
+  margin-bottom: 15px;
+  width: 550px;
+  height: 240px;
+  background-color: $surface;
+  border-radius: 5px;
+
+  &__about {
+    padding: 15px;
+  }
+  &__status {
+    padding-bottom: 15px;
+    border-bottom: thin solid $background;
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__name {
+    margin: 0;
+    color: $secondary;
+  }
+  &__was {
+    color: grey;
+    font-size: 12.5px;
+  }
+  &__status-link {
+    text-decoration: none;
+    color: grey;
+    font-size: 12.5px;
+  }
+  &__live {
+    margin-top: 15px;
+  }
+  &__city {
+    display: flex;
+    font-size: 14px;
+    color: $secondary;
+  }
+  &__city-where {
+    width: 165px;
+  }
+  &__city-name {
+    color: inherit;
+    text-decoration: none;
+  }
+  &__more-info {
+    margin-top: 10px;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;
+
+    &:hover {
+      background-color: $background;
+    }
+  }
+  &__more-link {
+    width: 100%;
+    height: 100%;
+    padding-left: 165px;
+    color: $secondary;
+    font-size: 12.5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    line-height: 1px;
+  }
+  &__counts {
+    border-top: thin solid $background;
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+    padding: 15px;
+  }
+  &__link {
+    text-decoration: none;
+  }
+  &__head-link {
+    margin: 0;
+    color: $secondary;
+    font-size: 19px;
+    text-align: center;
+  }
+  &__foot-link {
+    color: grey;
+    font-size: 12.5px;
+  }
+}
+.photos {
+  margin-bottom: 15px;
+  width: 550px;
+  height: 190px;
+  background-color: $surface;
+  border-radius: 5px;
+
+  &__head {
+    margin: 0 15px 15px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__head-link {
+    color: $secondary;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  &__head-span {
+    padding-left: 5px;
+    color: grey;
+    font-size: 12.5px;
+    text-decoration: none;
+  }
+  &__show-map {
+    color: grey;
+    font-size: 12.5px;
+    text-decoration: none;
+  }
+  &__images {
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+  &__img {
+    width: 123px;
+    height: 123px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+  &__img-one {
+    background-image: url(./assets/image_1.jpg);
+  }
+  &__img-two {
+    background-image: url(./assets/image_2.jpg);
+  }
+  &__img-three {
+    background-image: url(./assets/image_3.jpg);
+  }
+  &__close {
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background-color: $background;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 300ms;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+  &__close-icon {
+    font-size: 16px;
+    color: $secondary;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+.submit-post {
+  margin-bottom: 15px;
+  width: 550px;
+  height: 50px;
+  background-color: $surface;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__avatar {
+    margin-left: 15px;
+  }
+  &__avatar-img {
+    height: 30px;
+    border-radius: 50%;
+  }
+  &__input-form {
+    margin-right: 5px;
+    height: 50px;
+    flex-grow: 1;
+  }
+  &__input {
+    padding-left: 10px;
+    width: 100%;
+    height: 47px;
+    border: none;
+    outline: none;
+    background-color: $surface;
+    color: $secondary;
+
+    &::placeholder {
+      color: $secondary;
+    }
+  }
+
+  &__list {
+    margin: 0 5px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  &__link {
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  &__icon {
+    font-size: 20px;
+    color: $secondary;
+  }
+  &__hr {
+    margin-right: 10px;
+    height: 25px;
+    border-right: thin solid $secondary;
+  }
+}
+.wall {
+  width: 550px;
+  height: 235px;
+  background-color: $surface;
+  border-radius: 5px;
+
+  &__head {
+    margin: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__head-link {
+    height: 45px;
+    color: $secondary;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid $primary;
+  }
+  &__post {
+    height: 187px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__no-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__img {
+    margin-bottom: 20px;
+  }
+  &__span {
+    color: grey;
+    font-size: 12.5px;
+  }
+}
+
+// ====================== </ WIDE> ======================
+
+// ====================== </ MENU> ======================
+
+// ====================== <FOOTER> ======================
+
+// ====================== </ FOOTER> ======================
